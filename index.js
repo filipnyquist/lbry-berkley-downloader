@@ -1,7 +1,7 @@
 const logger = require('winston');
 const fs = require('fs');
 const LbryTrnsf = require('./lib/LbryTrnsf');
-
+const argv = require('yargs').argv;
 var Config = require('./lib/config');
 
 
@@ -32,4 +32,4 @@ logger.remove(
 
 var config = Config();
 
-var lbryTrnsf = new LbryTrnsf(config);
+var lbryTrnsf = new LbryTrnsf(config,argv);
